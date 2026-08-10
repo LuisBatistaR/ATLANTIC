@@ -1,0 +1,113 @@
+:root {
+  --navy: #0d2b50;
+  --blue: #204e79;
+  --sky: #e9ece8;
+  --paper: #fbfaf6;
+  --gold: #c3a24a;
+  --ink: #17344b;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--ink); background: var(--paper); font-family: "Inter", Arial, sans-serif; }
+a { color: inherit; text-decoration: none; }
+
+.site-header { min-height: 104px; display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: auto; padding: 10px 32px; }
+.brand { display: block; width: 150px; }
+.brand img { width: 100%; display: block; }
+nav { display: flex; align-items: center; gap: 28px; font-size: 14px; font-weight: 500; }
+nav a:not(.button):hover, .text-link:hover { color: var(--blue); }
+
+.button { display: inline-flex; gap: 10px; align-items: center; padding: 14px 19px; background: var(--gold); color: var(--navy); border-radius: 2px; font-weight: 500; font-size: 14px; transition: transform .2s, background .2s; }
+.button:hover { transform: translateY(-2px); background: #ad8d3c; }
+.button-small { padding: 11px 15px; }
+.button-light { background: white; color: var(--navy); }
+.button-light:hover { background: #e8f6f7; }
+
+.hero { min-height: 570px; display: grid; grid-template-columns: 1.05fr .95fr; background: var(--sky); overflow: hidden; }
+.hero-copy { max-width: 600px; justify-self: end; padding: 110px 58px 80px 32px; }
+.eyebrow { text-transform: uppercase; color: var(--blue); font-size: 12px; letter-spacing: .14em; font-weight: 600; margin: 0 0 20px; }
+h1, h2 { font-family: "Bebas Neue", Impact, sans-serif; color: var(--navy); letter-spacing: .015em; margin: 0; line-height: .95; }
+h1 { font-size: clamp(64px, 7.6vw, 116px); font-weight: 700; }
+h2 { font-size: clamp(44px, 5vw, 68px); font-weight: 400; }
+.intro { max-width: 450px; font-size: 19px; line-height: 1.55; margin: 26px 0 31px; }
+.hero-art { background: var(--navy); position: relative; min-height: 500px; overflow: hidden; color: white; }
+.hero-art p { position: absolute; z-index: 4; left: 12%; bottom: 10%; font-family: "Bebas Neue", Impact, sans-serif; letter-spacing: .03em; font-size: clamp(38px, 4.4vw, 63px); line-height: .95; margin: 0; }
+.world-map { position: absolute; width: 150%; max-width: none; height: 100%; inset: 0 auto auto -25%; object-fit: cover; object-position: center; opacity: .23; mix-blend-mode: screen; }
+.compass { position: absolute; width: 300px; height: 300px; right: -38px; top: -15px; object-fit: contain; opacity: .95; }
+
+.statement { max-width: 910px; margin: 0 auto; padding: 122px 32px 114px; }
+.statement h2 { max-width: 780px; }
+.statement > p:last-child { max-width: 660px; font-size: 18px; line-height: 1.65; margin: 28px 0 0; }
+.image-story { max-width: 1136px; margin: 0 auto; padding: 0 32px 122px; }
+.slider { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; border-bottom: 1px solid #b8d5dc; }
+.slider::-webkit-scrollbar { display: none; }
+.slide { position: relative; flex: 0 0 100%; height: 475px; overflow: hidden; scroll-snap-align: start; margin: 0; }
+.slide img { width: 100%; height: 100%; display: block; object-fit: cover; filter: grayscale(1) contrast(1.12); }
+.slide::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(4,22,40,.78) 0%, rgba(4,22,40,.38) 42%, rgba(4,22,40,.03) 75%); }
+.slide-quote { position: absolute; z-index: 1; width: min(520px, 70%); left: 7%; bottom: 13%; color: white; }
+.slide-quote span { display: block; margin-bottom: 18px; color: #e0c875; font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+.slide-quote blockquote { margin: 0; font-family: "Source Serif 4", "Source Serif Pro", Georgia, serif; font-size: clamp(31px, 4vw, 54px); font-style: italic; font-weight: 400; line-height: 1.05; }
+.slider-controls { display: flex; justify-content: flex-end; gap: 7px; padding-top: 14px; }
+.slider-controls a { display: grid; place-items: center; width: 37px; height: 28px; color: var(--blue); border: 1px solid #b8d5dc; font-size: 12px; font-weight: 600; }
+.slider-controls a:hover { color: var(--navy); border-color: var(--navy); background: #edf3f2; }
+.focus { background: var(--navy); color: white; padding: 95px max(32px, calc((100% - 1136px) / 2)); }
+.focus .eyebrow { color: #ddc470; }
+.focus h2 { color: white; }
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 58px; border-top: 1px solid rgba(255,255,255,.3); }
+.cards article { min-height: 230px; padding: 28px 34px 24px 0; border-right: 1px solid rgba(255,255,255,.3); }
+.cards article + article { padding-left: 34px; }
+.cards article:nth-child(3n) { border-right: 0; }
+.cards article:nth-child(n+4) { border-top: 1px solid rgba(255,255,255,.3); padding-top: 34px; }
+.number { color: #ddc470; font-size: 13px; font-weight: 700; }
+h3 { font-family: "Inter", Arial, sans-serif; font-size: 22px; font-weight: 600; margin: 40px 0 12px; }
+.cards p { max-width: 250px; color: #d5e1e9; line-height: 1.55; margin: 0; }
+
+.initiatives { max-width: 1136px; margin: auto; padding: 125px 32px 105px; }
+.initiatives h2 { max-width: 760px; }
+.summit-card { display: grid; grid-template-columns: 330px 1fr; gap: clamp(36px, 7vw, 100px); align-items: center; margin-top: 58px; padding: 35px; background: #eff1ed; border-left: 5px solid var(--gold); }
+.summit-poster { width: 100%; display: block; box-shadow: 12px 14px 0 var(--navy); }
+.summit-copy { max-width: 555px; }
+.summit-copy h3 { color: var(--navy); font-family: "Bebas Neue", Impact, sans-serif; font-size: clamp(43px, 5vw, 66px); font-weight: 400; letter-spacing: .02em; line-height: .95; margin: 0 0 20px; }
+.summit-copy p:not(.eyebrow):not(.summit-place) { font-size: 17px; line-height: 1.65; margin: 0 0 21px; }
+.summit-place { color: var(--blue); font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; margin: 0 0 24px; }
+
+.insight { max-width: 1136px; margin: auto; padding: 104px 32px; display: flex; justify-content: space-between; gap: 40px; }
+.insight h2 { max-width: 670px; font-size: clamp(34px, 4vw, 50px); }
+.insight p:not(.eyebrow) { font-size: 17px; margin: 23px 0; }
+.text-link { color: var(--blue); font-weight: 700; }
+.insight-date { min-width: 155px; height: 155px; display: flex; flex-direction: column; justify-content: center; align-items: center; color: var(--blue); border: 1px solid #b8d5dc; border-radius: 50%; }
+.insight-date span { font-size: 12px; text-transform: uppercase; letter-spacing: .12em; }
+.insight-date strong { font-family: "Bebas Neue", Impact, sans-serif; font-size: 48px; font-weight: 400; letter-spacing: .04em; }
+.contact { text-align: center; padding: 100px 32px; background: var(--gold); }
+.contact .eyebrow, .contact h2 { color: var(--navy); }
+.contact h2 { max-width: 640px; margin: 0 auto 35px; }
+footer { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; padding: 28px 32px; margin: auto; font-size: 13px; color: #547086; }
+.instagram { display: inline-flex; align-items: center; gap: 8px; color: var(--navy); font-weight: 500; }
+.instagram:hover { color: var(--blue); }
+.instagram svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+
+@media (max-width: 720px) {
+  .site-header { padding: 16px 20px; }
+  nav a:not(.button) { display: none; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-copy { justify-self: start; padding: 80px 25px 64px; }
+  .hero-art { min-height: 350px; }
+  .statement, .insight { padding: 75px 25px; }
+  .image-story { padding: 0 25px 75px; }
+  .slide { height: 410px; }
+  .slide-quote { left: 8%; bottom: 11%; width: 82%; }
+  .focus { padding: 70px 25px; }
+  .cards { grid-template-columns: 1fr; margin-top: 40px; }
+  .cards article, .cards article + article, .cards article:nth-child(n+4) { min-height: auto; padding: 24px 0; border-top: 0; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.3); }
+  .cards article:last-child { border-bottom: 0; }
+  h3 { margin-top: 22px; }
+  .initiatives { padding: 75px 25px; }
+  .summit-card { grid-template-columns: 1fr; gap: 32px; margin-top: 40px; padding: 22px; }
+  .summit-poster { max-width: 300px; }
+  .summit-copy h3 { margin-top: 0; }
+  .insight { flex-direction: column; }
+  .insight-date { width: 130px; min-width: 130px; height: 130px; }
+  .contact { padding: 75px 24px; }
+  footer { padding: 22px 20px; gap: 16px; align-items: flex-start; flex-direction: column; }
+}
