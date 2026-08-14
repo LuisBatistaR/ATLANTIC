@@ -1,0 +1,10 @@
+[build]
+  publish = "."
+
+[context.production.environment]
+  # Añadir variables de entorno en Netlify UI si es necesario
+
+[[redirects]]
+  from = "/admin"
+  to = "/admin/"
+  status = 200

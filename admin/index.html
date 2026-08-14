@@ -38,6 +38,11 @@
         <!-- Decap/Netlify CMS cargará aquí -->
         <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
         <!-- Configuración en admin/config.yml -->
+        <script>
+          if (window.CMS && typeof CMS.init === 'function') {
+            CMS.init({ config: '/admin/config.yml' });
+          }
+        </script>
       </section>
     </main>
 
