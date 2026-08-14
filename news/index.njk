@@ -1,0 +1,44 @@
+---
+title: Noticias
+layout: "layouts/news-layout.njk"
+---
+
+<section class="section-heading">
+  <p class="eyebrow">Lo que está pasando.</p>
+  <h2>Noticias</h2>
+</section>
+
+{% set items = collections.news %}
+
+{% if items.length == 0 %}
+  <p>No hay noticias publicadas todavía.</p>
+{% else %}
+  <div class="news-grid">
+    {% set _featured_shown = false %}
+    {% for item in items %}
+      {% if item.data.featured and not _featured_shown %}
+        <article class="news-feature">
+          <img src="{{ item.data.thumbnail }}" alt="" />
+          <div class="news-copy">
+            <p class="eyebrow">{{ item.data.category }}</p>
+            <h3><a href="{{ item.url }}">{{ item.data.title }}</a></h3>
+            <p class="meta">{{ item.data.author }} · {{ item.date | date("dd LLL yyyy") }}</p>
+            <p class="excerpt">{{ item.data.excerpt }}</p>
+          </div>
+        </article>
+        {% set _featured_shown = true %}
+      {% endif %}
+    {% endfor %}
+
+    <div class="news-list">
+      {% for item in items %}
+        <article class="news-item">
+          <h4><a href="{{ item.url }}">{{ item.data.title }}</a></h4>
+          <p class="meta">{{ item.data.category }} · {{ item.date | date("dd LLL yyyy") }}</p>
+          <p class="excerpt">{{ item.data.excerpt }}</p>
+          <a class="text-link" href="{{ item.url }}">Leer más →</a>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}

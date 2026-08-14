@@ -1,0 +1,38 @@
+<h1>Atlantic Democracy Center — Sitio público</h1>
+<p>Este repositorio contiene la versión estática del sitio web del Atlantic Democracy Center.</p>
+<ul>
+<li>Repositorio fuente: GitHub (rama principal: <code>main</code>)</li>
+<li>Entorno de producción: Netlify (sitio: https://atlanticdemocracy.org/)</li>
+</ul>
+<p>Estructura relevante:</p>
+<ul>
+<li><code>index.html</code>, <code>styles.css</code>, <code>assets/</code> — sitio público y recursos.</li>
+<li><code>content/</code> — preparada para contenido editorial futuro:
+<ul>
+<li><code>content/news/</code></li>
+<li><code>content/ideas/</code></li>
+<li><code>content/voices/</code></li>
+</ul>
+</li>
+<li><code>admin/index.html</code> — página informativa: &quot;ADC Editorial Desk — Sistema editorial en preparación.&quot; (sin CMS ni autenticación en esta fase).</li>
+<li><code>netlify.toml</code> — configuración mínima para Netlify (publica la raíz del repositorio).</li>
+<li><code>CNAME</code> y <code>sitemap.xml</code> — configuración de dominio y sitemap.</li>
+</ul>
+<p>Cómo trabajar localmente:</p>
+<ol>
+<li>Clona el repositorio y trabaja en la rama <code>main</code>.</li>
+<li>Sirve los archivos estáticos localmente para comprobar cambios:</li>
+</ol>
+<pre><code class="language-bash">python -m http.server 8000 --directory .
+
+# Abrir http://localhost:8000/ en el navegador
+</code></pre>
+<ol start="3">
+<li>Haz commits y push a la rama <code>main</code>. Netlify está conectado al repositorio y desplegará la versión de producción automáticamente según la configuración de Netlify.</li>
+</ol>
+<p>Notas importantes:</p>
+<ul>
+<li>GitHub es la fuente de verdad; Netlify gestiona el despliegue a producción. No uses GitHub Pages para producción.</li>
+<li>No hay CMS activo en <code>admin/</code> por ahora; <code>content/</code> está preparada para archivos markdown que en el futuro podrán transformarse en páginas mediante un generador estático.</li>
+<li>No subir secretos ni tokens al repositorio.</li>
+</ul>

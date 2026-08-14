@@ -1,0 +1,18 @@
+:root{--navy:#0d2b50;--gold:#c3a24a;--paper:#fbfaf6;--ink:#17344b}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,Arial,sans-serif;background:var(--paper);color:var(--ink)}
+.admin-header{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 32px;border-bottom:1px solid #e5eef0}
+.brand{display:flex;align-items:center;gap:14px}
+.brand img{width:120px}
+.brand-text h1{font-family:"Bebas Neue",Impact,sans-serif;margin:0;font-size:20px;color:var(--navy)}
+.brand-text p{margin:0;font-size:12px;color:#547086}
+.admin-nav{display:flex;gap:18px}
+.admin-nav a{color:var(--navy);font-weight:700;text-decoration:none}
+.admin-actions .button{background:var(--gold);color:var(--navy);padding:10px 14px;border-radius:3px;text-decoration:none;font-weight:700}
+.admin-main{max-width:1100px;margin:28px auto;padding:0 20px}
+.admin-intro h2{margin:0 0 6px;font-family:"Bebas Neue",Impact,sans-serif}
+.admin-intro p{color:#547086}
+.admin-footer{max-width:1100px;margin:40px auto;padding:0 20px;color:#547086;font-size:13px}
+
+/* Mobile */
+@media(max-width:720px){.admin-header{flex-direction:column;align-items:flex-start}.brand img{width:100px}.admin-nav{flex-wrap:wrap;gap:12px}}
